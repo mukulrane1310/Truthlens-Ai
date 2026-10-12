@@ -1,0 +1,57 @@
+# Environment variables and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!server/.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+build/
+*.local
+
+# Databases and local data
+*.db
+*.sqlite
+*.sqlite3
+
+# Private keys and credentials
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# IDEs and System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Additional local and generated files
+client/.env
+client/.env.*
+!client/.env.example
+server/.env
+server/.env.*
+!server/.env.example
+*.log
+coverage/
+.vite/
+
+# Local backup files
+*.bak
+
+# Keep tests local only
+server/tests/
