@@ -128,7 +128,3 @@ TruthLens AI assists with evaluating claims; it does not guarantee that every ve
 - **Deployment and Monitoring** — Strengthen production deployment, logging, and service health monitoring.
 
 *These enhancements are planned and may change as the project evolves.*
-
-## License
-
-No license has been specified yet. All rights reserved unless a license is added to this repository.
