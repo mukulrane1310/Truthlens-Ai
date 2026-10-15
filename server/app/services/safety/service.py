@@ -1,4 +1,6 @@
-﻿from app.services.llm.schemas import EvidenceClassification, Verdict, VerdictResponse
+﻿
+from app.services.llm.schemas import Verdict, VerdictResponse
+from app.services.rag.context import RAGContextBuilder
 from app.services.rag.interface import RetrievedEvidence
 from app.services.safety.schemas import SafetyCheckResult, SafetyReport
 
@@ -9,10 +11,8 @@ class SafetyService:
         verdict: VerdictResponse,
         evidence: list[RetrievedEvidence],
     ) -> SafetyReport:
-        evidence_ids = {
-            f"E{index}"
-            for index, _ in enumerate(evidence, start=1)
-        }
+        context_items = RAGContextBuilder().build(evidence)
+        evidence_ids = {item.citation_id for item in context_items}
 
         grounded = SafetyCheckResult(
             passed=bool(evidence) or verdict.verdict == Verdict.INSUFFICIENT_EVIDENCE,

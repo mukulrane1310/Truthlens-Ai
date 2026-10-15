@@ -33,6 +33,7 @@ router = APIRouter(
 )
 async def upload_document(
     file: UploadFile = File(...),
+    current_user=Depends(get_current_user),
 ):
     try:
         text = await extract_uploaded_text(
@@ -59,6 +60,7 @@ async def upload_document(
 )
 async def upload_image(
     file: UploadFile = File(...),
+    current_user=Depends(get_current_user),
 ):
     try:
         text = await extract_uploaded_text(
